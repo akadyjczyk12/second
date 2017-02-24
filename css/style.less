@@ -1,0 +1,499 @@
+@columns: 12;
+@column-width: 65;
+@gutter-width: 30;
+@total-width: 100%;
+
+.container{
+    margin: 0 1em;
+    padding: 0 .5em;    
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+// Główna nawigacja
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; 
+    background: fade(lighten(black,25%),70%);
+    .border-bottom;
+    z-index: 1000;    
+}
+.content-nav{
+    float: right;
+    list-style-type: none; 
+     @media @phone{
+        display: none;
+    }
+
+    
+}
+.slicknav_menu{
+    display: none;    
+        @media @phone{        
+             display: block;
+    }
+       
+}
+.content-nav li{
+    float: left;
+    margin: 1em;
+}
+
+#main-nav{
+    overflow: hidden;
+    .vertical;
+
+}
+.content-nav > li a{  
+   color: white;
+    text-decoration: none;
+    font-family: @font-header;
+    .transition;    
+    &:hover{
+        color: lighten(@link-color, 20%);
+    }
+}
+
+.content{    
+    position: relative;
+    background: url(/img/header/1.jpg) center 0 no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;    
+}
+.nakladka{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: fade(black,10%);
+    z-index: 0;
+}
+.slider{
+    overflow: visible;   
+    height: 701px;    
+    font-family: @font-header;
+    font-weight: 500;
+    z-index: 50;
+    .button-primary{
+        position: absolute;
+        left: 30%;
+        top:80%;
+        transform: rotate(-10deg);
+        text-decoration: none;
+        color: black;
+        font-weight: 700; 
+        text-shadow: .4px .4px black;
+        background: fade(lightgray,50%);
+        &:hover{
+            color: lighten(black,20%);
+        }
+        @media @tablet{
+            left:60%;
+        }
+   }
+
+}
+.lista{
+    padding: 3em 0em;     
+    text-align: center; 
+    width: 300px;
+    h1{
+        font-size: 22px;
+        margin: .5em 0;
+    }
+    @media @phone{
+        padding: 1em 0em; 
+        text-shadow: .5px 0.5px black;
+        h1{
+        font-size:20px;
+        color: #404442;
+        }
+        p{
+            color: #404442;           
+        }
+
+    }
+}
+.space{
+    width: 100%;
+    height: 120px;
+    background: #5e594f;
+    text-align: center;
+    margin-top: .1em;
+}
+/* umiejętnosci*/
+
+#skills .container .col{
+    overflow: hidden;
+    min-height: 400px;
+        @media @tablet{
+        .column(6);
+    }
+    @media @phone{
+        .column(12);
+    }
+
+    .column(3);
+    .item{
+        margin: 2em;
+        text-align: center;
+       
+        p{
+            font-size: 1.1em;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            padding: 40px;
+            border-radius: 2%;
+            display: inline-block;
+            margin: 1em 0;
+
+        }
+        .fa{
+            font-size: 50px;
+            line-height: 50px;
+            margin-bottom: .1em;
+        }
+    }
+}
+// portfolio owl carusel
+#portfolio{
+    padding-bottom: 4em;
+}
+.owl-item{
+    position: relative;
+    &:hover .overlay{
+        opacity: 1;
+        // transform: translate3d(0px, 0px, 0px);
+    }
+
+}
+    .overlay{
+        position: absolute;
+        top:0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        cursor: move;            
+        background: fade(lighten(black,25%),70%);
+        opacity: 0;
+        .transition;
+        // -webkit-transform: translate3d(0px, -200px, 0px);
+        // -ms-transform: translate3d(0px, -200px, 0px);
+        // transform: translate3d(0px, -200px, 0px);    
+
+        .owl-inside{
+            position: absolute;
+            text-align: center;  
+            top:50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-shadow: 1px 1px black;
+            p{
+                font-size: 18px;  
+                 color: white;
+            }
+            h3{
+                font-size: 22px;
+                color: white;
+                font-family: @font-header; 
+
+            }
+            a{
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                border: 1px solid grey;
+                border-radius: 50%;
+                padding: .5em;
+                background: fade(white,85%);
+                color: @accent-color;               
+                margin: 2em 0;
+                text-align: center;              
+                .transition;
+                &:hover{
+                    background: @accent-color;
+                    color: white;
+                }
+                i{
+                    line-height: 35px;
+                }
+            }
+
+        }
+    }
+// kontakt
+#contact{
+    background: url(/img/dark_wall.png);
+}
+.inputs-form{
+    text-align: center;
+}
+.forma{
+  margin: 0 20%;
+}
+.group { 
+  position:relative; 
+  margin-bottom:45px; 
+   
+}
+.input{
+  font-size:18px;
+  background: transparent;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+    font-family: @font-header;
+    color: gray;
+}
+.input:focus { outline:none; }
+
+/* LABEL ======================================= */
+label{
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+.input:focus ~ label, .input:valid ~ label{
+  top:-20px;
+  font-size:14px;
+  color: gray;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:darken(white,30%); 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+.submit-button{
+    z-index: 1000;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    border:1px solid #999991;
+    color: white;
+    text-align: center;
+    .transition;
+    margin-bottom: 3em;
+    &:hover{
+        box-shadow: 0px 0px 3px white; 
+        cursor: pointer;
+        background: fade(gray,10%);
+    }
+}
+.pasek-footer{
+    width: 100%;
+    height: 55px;    
+    color: lightgray;
+    background: lighten(black,5%);    
+   
+}
+.bx-viewport {
+   min-height: 320px;    
+}
+.inner-footer{
+    padding-top: 1.2em;
+    font-size: 15px;
+}
+
+// moje CV
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 200; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: -50px;
+    width: 100%; /* Full width */
+    height: 95%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   
+     
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    margin-bottom:5em;
+    padding: 0;
+    border: 1px solid #888;    
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 1s;
+    animation-name: animatetop;
+    animation-duration: 1s;
+   
+    .modal-body{
+        padding: 2em 3em;
+    }
+   
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #1C74BB;
+    color: white;
+    padding: 2em;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.modal-footer {
+    padding: 10px 16px;
+    background-color: #fff;
+    color: darken(lightgray,20%);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.row{
+    overflow: hidden;
+    padding-bottom: 2em;
+    .left{
+        float: left;
+        width: 20%;
+        margin-right: 2em;
+    }
+    .right{
+        float: left;         
+    }
+}
+
+
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+.path {
+	stroke-width: 2;
+	stroke: lightgray;    
+    fill:#ffffff;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 8s linear forwards;
+    animation: dash 8s linear forwards;
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
